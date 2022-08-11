@@ -72,7 +72,7 @@ class SplitModel(yolo.Model):
             if exit_val < counter:
                 break # exit early
             if enter_val <= counter:
-                needed = set()
+                needed = set() # this could be preconstructed in forward_optimization.yaml for slight speed increase
                 for i in self.forward_optimization[counter-1:]:
                     if i is not None:
                         for e in i:
